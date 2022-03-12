@@ -4,6 +4,8 @@ This code is the repo for a post series on Peakd.
 
 # Posts
 * https://peakd.com/hive-169321/@farpetrad/hosting-a-vue-3-application-in-net-6
+* https://peakd.com/hive-169321/@farpetrad/hosting-a-vue-3-application-in-net-6-part-2-enabling-typescript-and-jest
+
 
 ## Features
  * Content compression using gzip or brotli 
@@ -12,6 +14,7 @@ This code is the repo for a post series on Peakd.
  * webpack5
  * babel7
  * bootstrap via cdn
+ * typescript
 
 
 ## Building
