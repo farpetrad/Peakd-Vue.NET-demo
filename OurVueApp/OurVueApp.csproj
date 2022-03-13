@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\App.spec.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\%40types\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\App.spec.ts" />
   </ItemGroup>
 
 </Project>

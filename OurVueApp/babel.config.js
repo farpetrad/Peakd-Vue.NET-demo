@@ -3,7 +3,7 @@
 
     const presets = [
         [
-            "@babel/preset-env", 
+            "@babel/preset-env",
             {
                 "targets": {
                     "edge": "17",
@@ -19,12 +19,21 @@
         ]
     ];
 
+    const env = {
+        "test": {
+            "presets": [
+                ["@babel/preset-env"],
+            ]
+        }
+    };
+
     const plugins = [
         "@babel/plugin-syntax-dynamic-import",
         "@babel/plugin-transform-runtime",
     ];
 
     return {
+        env,
         presets,
         plugins,
         comments: true
