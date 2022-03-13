@@ -1,18 +1,13 @@
-﻿
-
-module.exports = {
+﻿module.exports = {
     "testEnvironment": 'jsdom',
-    "moduleFileExtensions": [
-        "js",
-        "jsx",
-        "json",
-        "ts",
-        "tsx",
-        "vue"
-    ],
+    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx", "vue"],
     "moduleNameMapper": {
         "^@/(.*)$": "<rootDir>/ClientApp/$1",
     },
+    "modulePaths": [
+        "<rootDir>/ClientApp",
+        "<rootDir>/ClientApp/components",
+    ],
     "transform": {
         "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
         ".*\\.(vue)$": "<rootDir>/node_modules/@vue/vue3-jest",
@@ -30,9 +25,6 @@ module.exports = {
     "testMatch": [
         "<rootDir>/ClientApp/**/*.spec.(js|jsx|ts|tsx)"
     ],
-    "snapshotSerializers": [
-        'jest-serializer-vue'
-    ],
     "testURL": 'http://localhost/',
     "watchPlugins": [
         "jest-watch-typeahead/filename",
@@ -42,5 +34,5 @@ module.exports = {
         'ts-jest': {
             "babelConfig": true
         }
-    }
+    },
 }

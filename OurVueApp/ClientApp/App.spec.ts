@@ -15,7 +15,7 @@ describe('It tests the App.vue', () => {
 
     it('Tests that it renders', () => {
         expect(wrapper).not.toBeNull();
-
-        expect(wrapper.text()).toBe('Hello from .NET');
+        const app = wrapper.find('#app-component');
+        expect(app.exists()).toBeTruthy();
     });
 });
