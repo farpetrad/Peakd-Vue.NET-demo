@@ -85,35 +85,51 @@ module.exports = {
       },
       {
         test: /\.*scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,          
-          'css-loader',
-          {
-            loader: 'sass-loader',
-              options: {
-                  additionalData: "@import '@/scss/sm.scss';",
-                  sassOptions: {
-                    indentedSyntax: false,
+          use: [
+              { loader: "style-loader" },
+              {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                      publicPath: '../scripts/bundle/'
                   }
+              },
+              { loader: 'css-loader', options: {} },
+              {
+                  loader: 'resolve-url-loader',
+              },
+              {
+                loader: 'sass-loader',
+                  options: {
+                      sassOptions: {
+                        indentedSyntax: false,
+                      }
               
-            },
-          },
+                },
+              },
         ],
       },
       {
         test: /\.*sass$/,
-        use: [
-          MiniCssExtractPlugin.loader,          
-          'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-                additionalData: "@import '@/scss/sm.scss'",
-                sassOptions: {
-                    indentedSyntax: true,
-                }
-            },
-          },
+          use: [
+              { loader: "style-loader" },
+              {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                      publicPath: '../scripts/bundle/'
+                  }
+              },
+              { loader: 'css-loader', options: {} },
+              {
+                  loader: 'resolve-url-loader',
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                    sassOptions: {
+                        indentedSyntax: true,
+                    }
+                },
+              },
         ],
       },
       {
@@ -123,23 +139,13 @@ module.exports = {
               'style-loader!css-loader'
           ]
       },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-        loader: 'file-loader',
+          {
+              test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+              type: 'asset/resource'
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              fallback: 'file-loader',
-              name: '[name].[ext]?[hash]',
-              outputPath: imgOutputPath + '/Images',
-            },
-          },
-        ],
+        type: 'asset/resource'
       },
     ],
   },

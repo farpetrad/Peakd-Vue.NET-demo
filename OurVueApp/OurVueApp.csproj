@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\%40types\" />
+    <Folder Include="ClientApp\assets\" />
   </ItemGroup>
 
   <ItemGroup>
