@@ -1,6 +1,6 @@
 ﻿<template>
     <div id="app-component" class="container-fluid">
-        <navbar>
+        <navbar alignment="right">
             <template #content>
                 <p style="color:white;">Navigation</p>
             </template>

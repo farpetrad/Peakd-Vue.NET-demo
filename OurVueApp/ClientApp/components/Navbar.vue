@@ -17,7 +17,11 @@
             </button>
 
             <div class="collapse navbar-collapse" ref="navbarContent" id="navbarContent">
-                <div class="navbar-nav mr-auto">
+                <div
+                     :class="{'navbar-nav': true,
+                              'ml-auto': alignment === 'right',
+                              'mr-auto': alignment === 'left'
+                     }">
                     <slot name="content"></slot>
                 </div>
             </div>
@@ -30,6 +34,18 @@
 
     const navbarToggler = ref<HTMLButtonElement>();
     const navbarContent = ref<HTMLDivElement>();
+
+    const props = defineProps({
+        alignment: {
+            type: String,
+            required: true,
+            default: 'left',
+            validator: (value: String) => {
+                const lower = value.toLowerCase();
+                return lower === 'left' || lower === 'right';
+            }
+        }
+    });
 
     function toggleMenu($event: PointerEvent) {
         if (!navbarToggler || !navbarToggler.value || !navbarContent || !navbarContent.value) {

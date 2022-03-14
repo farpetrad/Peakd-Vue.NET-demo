@@ -16,7 +16,10 @@ describe('It tests the Navbar.vue component', () => {
             },
             slots: {
                 content: slotContent,
-            }
+            },
+            props: {
+                alignment: 'left',
+            },
         });
     });
 
