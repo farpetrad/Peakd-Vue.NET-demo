@@ -5,6 +5,7 @@ This code is the repo for a post series on Peakd.
 # Posts
 * https://peakd.com/hive-169321/@farpetrad/hosting-a-vue-3-application-in-net-6
 * https://peakd.com/hive-169321/@farpetrad/hosting-a-vue-3-application-in-net-6-part-2-enabling-typescript-and-jest
+* https://peakd.com/hive-169321/@farpetrad/vuejs-3-development-part-3-jest-and-creating-a-navigation-bar
 
 
 ## Features

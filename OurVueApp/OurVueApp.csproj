@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\App.spec.ts" />
+    <None Remove="ClientApp\components\Navbar.spec.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\%40types\" />
+    <Folder Include="ClientApp\assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\App.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\components\Navbar.spec.ts" />
   </ItemGroup>
 
 </Project>
