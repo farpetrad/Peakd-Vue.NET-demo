@@ -6,9 +6,7 @@
             </template>
         </navbar>
         <div class="row" id="page-content">
-            <div class="offset-2 col-8 text-center">
-                <h4>Hello from .NET</h4>
-            </div>
+            <router-view></router-view>
         </div>
     </div>
 </template>

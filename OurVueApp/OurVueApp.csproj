@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="ClientApp\App.spec.ts" />
     <None Remove="ClientApp\components\Navbar.spec.ts" />
+    <None Remove="ClientApp\router\index.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\App.spec.ts" />
     <TypeScriptCompile Include="ClientApp\components\Navbar.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\router\index.ts" />
   </ItemGroup>
 
 </Project>

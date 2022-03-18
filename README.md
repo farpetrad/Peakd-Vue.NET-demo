@@ -16,6 +16,7 @@ This code is the repo for a post series on Peakd.
  * babel7
  * bootstrap via cdn
  * typescript
+ * Jest unit testing
 
 
 ## Building
