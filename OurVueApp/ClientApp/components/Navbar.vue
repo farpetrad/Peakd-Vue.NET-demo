@@ -16,7 +16,7 @@
                 <span class="navbar-toggler-icon" />
             </button>
 
-            <div class="collapse navbar-collapse" ref="navbarContent" id="navbarContent">
+            <div class="collapse navbar-collapse pl-2" ref="navbarContent" id="navbarContent">
                 <div
                      :class="{'navbar-nav': true,
                               'ml-auto': alignment === 'right',

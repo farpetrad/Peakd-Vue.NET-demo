@@ -11,6 +11,9 @@ describe('It tests the App.vue', () => {
                 stubs: {
                     RouterView: {
                         template: '<span />'
+                    },
+                    RouterLink: {
+                        template: '<a href="/">Link</a>'
                     }
                 }
             }

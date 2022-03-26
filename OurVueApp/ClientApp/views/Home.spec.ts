@@ -15,5 +15,9 @@ describe('It tests the home page', () => {
     it('Renders the page', () => {
         expect(wrapper).not.toBeNull();
         expect(wrapper.exists()).toBeTruthy();
+
+        const page = wrapper.find('#home-page');
+        expect(page).not.toBeNull();
+        expect(page.exists()).toBeTruthy();
     });
 });
