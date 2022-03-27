@@ -25,7 +25,7 @@
 <script setup lang="ts">
     import Navbar from '@/components/Navbar.vue';
     import NavItemText from '@/components/NavItemText.vue';
-    import NavItemTextProps from '@/@types/NavItemProps';
+    import NavItemTextProps from '@/types/NavItemProps';
 
     const navItems: NavItemTextProps[] = [
         { href: '/', label: 'Home' },

@@ -7,7 +7,7 @@
 
 <script lang="ts">
     import { PropType, defineComponent } from 'vue';
-    import NavItemProps from '@/@types/NavItemProps';
+    import NavItemProps from '@/types/NavItemProps';
 
     export default defineComponent({
         props: {

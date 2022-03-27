@@ -9,7 +9,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
@@ -17,8 +16,6 @@
       "jest"
     ],
     "paths": {
-      "@t/*": [ "./ClientApp/@types/*" ],
-      "@c/*": [ "./ClientApp/components/*" ],
       "@/*": [ "./ClientApp/*" ]
     },
     "lib": [
@@ -28,14 +25,11 @@
       "scripthost"
     ]
   },
-
-  "exclude": [
-    "./node_modules"
-  ],
-
   "include": [
-    "./@types/**/*.d.ts",
     "./ClientApp/**/*.ts",
     "./ClientApp/**/*.vue"
-  ]
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

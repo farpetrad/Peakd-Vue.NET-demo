@@ -11,7 +11,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 // Output location
 const appOutputPath = './wwwroot/Scripts/Bundle';
 const styleOutputPath = '../../Content/Styles';
-const imgOutputPath = '../../Content';
 const pageOutputPath = './wwwroot/';
 
 // App lication in sln
@@ -46,8 +45,7 @@ module.exports = {
     extensions: ['.vue', '.js', '.json','.ts','.tsx'],
     alias: {
       '@': path.resolve(__dirname, appbasePath),
-      components: path.resolve(__dirname, appbasePath + 'components'),
-      views: path.resolve(__dirname, appbasePath + 'views'),
+       vue$: 'vue/dist/vue.runtime.esm-bundler.js'
     }
   },
   module: {
@@ -56,6 +54,7 @@ module.exports = {
               test: /\.ts$/,
               exclude: /node_modules/,
               use: [
+                  { loader: 'babel-loader', },
                   {
                       loader: 'ts-loader',
                       options: {
@@ -150,7 +149,7 @@ module.exports = {
     ],
   },
     plugins: [
-        new CleanWebpackPlugin({
+      new CleanWebpackPlugin({
             verbose: true,
             dry: false,
             dangerouslyAllowCleanPatternsOutsideProject: true,
