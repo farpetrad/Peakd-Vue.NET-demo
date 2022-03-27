@@ -6,9 +6,18 @@
             </template>
         </navbar>
         <div class="row" id="page-content">
-            <transition appear enter-active-class="animated fadeIn">
-                <router-view></router-view>
-            </transition>
+            <router-view v-slot="{ Component, route }">
+                <transition appear enter-active-class="animated fadeIn" :key="route.path">
+                    <suspense>
+                        <template #default>
+                            <component :is="Component" :key="route.path" />
+                        </template>
+                        <template #fallback>
+                            <div class="mt-5 pt-5">Loading....</div>
+                        </template>
+                    </suspense>
+                </transition>
+            </router-view>
         </div>
     </div>
 </template>
