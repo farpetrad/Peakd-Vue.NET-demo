@@ -2,7 +2,7 @@
     <div id="app-component" class="container-fluid">
         <navbar alignment="left">
             <template #content>
-                <nav-item-text v-for="(item,index) in navItems" :button="item"></nav-item-text>
+                <nav-item-text v-for="(item,index) in navItems" :key="index" :button="item"></nav-item-text>
             </template>
         </navbar>
         <div class="row" id="page-content">
