@@ -1,28 +1,37 @@
 ﻿<template>
     <div class="nav-item" id="nav-item">
-        <router-link v-if="isInternalLink(button.href)" :to="button.href">{{button.label}}</router-link>
-        <a v-else :href="button.href">{{button.label}}</a>
+        <router-link v-if="isInternalLink" :to="link.href">{{link.label}}</router-link>
+        <a v-else :href="link.href">{{link.label}}</a>
     </div>
 </template>
 
-<script setup lang="ts">
-    const props = defineProps({
-        button: {
-            type: Object,
-            required: true,
-            default: () => {
-                return {
-                    label: '',
-                    href: '',
+<script lang="ts">
+    import { PropType, defineComponent } from 'vue';
+    import NavItemProps from '@/@types/NavItemProps';
+
+    export default defineComponent({
+        props: {
+            link: {
+                type: Object as PropType<NavItemProps>,
+                required: true,
+                default: (): NavItemProps => {
+                    return {
+                        label: '',
+                        href: '',
+                    }
                 }
             }
+        },
+        setup(props) {
+            const isInternalLink = (): boolean => {
+                debugger;
+                if (props.link.href.length && props.link.href.includes('http')) return false;
+                return true;
+            }
+
+            return { isInternalLink };
         }
     });
-
-    const isInternalLink = (link: string): boolean => {
-        if (link.length && link.includes('http')) return false;
-        return true;
-    }
 </script>
 
 <style lang="scss">

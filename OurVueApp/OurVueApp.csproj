@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\%40types\NavItemProps.d.ts" />
     <None Remove="ClientApp\App.spec.ts" />
     <None Remove="ClientApp\components\Navbar.spec.ts" />
     <None Remove="ClientApp\components\NavItemText.spec.ts" />
@@ -16,11 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\%40types\" />
     <Folder Include="ClientApp\assets\" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\@types\NavItemProps.d.ts" />
     <TypeScriptCompile Include="ClientApp\App.spec.ts" />
     <TypeScriptCompile Include="ClientApp\components\Navbar.spec.ts" />
     <TypeScriptCompile Include="ClientApp\components\NavItemText.spec.ts" />

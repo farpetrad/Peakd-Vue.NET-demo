@@ -19,7 +19,7 @@ describe('It tests the home page', () => {
                 }
             },
             props: {
-                button: {
+                link: {
                     label: TESTLABELTEXT,
                     href: '/',
                 }
@@ -56,7 +56,7 @@ describe('It tests the home page', () => {
                 }
             },
             props: {
-                button: {
+                link: {
                     label: TESTLABELTEXT,
                     href: 'http://www.somewebsite.com',
                 }
