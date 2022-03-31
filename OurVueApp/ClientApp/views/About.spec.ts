@@ -1,5 +1,5 @@
 ﻿import { mount, VueWrapper } from '@vue/test-utils'
-import About from './About.vue';
+import About from './AboutPage.vue';
 
 describe('It tests the About page', () => {
     let wrapper: VueWrapper<any>;

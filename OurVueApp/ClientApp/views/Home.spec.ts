@@ -1,5 +1,5 @@
 ﻿import { mount, VueWrapper } from '@vue/test-utils'
-import Home from './Home.vue';
+import Home from './HomePage.vue';
 
 describe('It tests the home page', () => {
     let wrapper: VueWrapper<any>;
