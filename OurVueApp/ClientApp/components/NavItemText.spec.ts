@@ -47,8 +47,6 @@ describe('It tests the home page', () => {
     });
 
     it('Contains the expected label when using anchor tags', () => {
-        wrapper.unmount();
-        
         const localWrapper = mount(NavItemText, {
             global: {
                 stubs: {
@@ -68,7 +66,7 @@ describe('It tests the home page', () => {
 
         expect(localWrapper).not.toBeNull();
         expect(localWrapper.exists()).toBeTruthy();
-        console.log('wrapper: ' + localWrapper);
         expect(localWrapper.text()).toBe("LOCAL");
+        localWrapper.unmount();
     });
 });
