@@ -47,17 +47,19 @@ describe('It tests the home page', () => {
     });
 
     it('Contains the expected label when using anchor tags', () => {
+        wrapper.unmount();
+        
         const localWrapper = mount(NavItemText, {
             global: {
                 stubs: {
                     RouterLink: {
-                        template: `<a href="/">nothing</a>`
+                        template: `<span></span>`
                     }
                 }
             },
             props: {
                 link: {
-                    label: TESTLABELTEXT,
+                    label: "LOCAL",
                     href: 'http://www.somewebsite.com',
                 }
             },
@@ -66,6 +68,7 @@ describe('It tests the home page', () => {
 
         expect(localWrapper).not.toBeNull();
         expect(localWrapper.exists()).toBeTruthy();
-        expect(localWrapper.text()).toBe(TESTLABELTEXT);
+        console.log('wrapper: ' + localWrapper);
+        expect(localWrapper.text()).toBe("LOCAL");
     });
 });

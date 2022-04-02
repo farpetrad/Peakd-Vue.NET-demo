@@ -1,14 +1,16 @@
 ﻿<template>
   <div class="nav-item" id="nav-item">
-    <router-link v-if="isInternalLink" :to="link.href">{{
+    <template v-if="isInternalLink">
+      <router-link :to="link.href">{{
       link.label
     }}</router-link>
+    </template>
     <a v-else :href="link.href">{{ link.label }}</a>
   </div>
 </template>
 
 <script lang="ts">
-import { PropType, defineComponent } from "vue";
+import { PropType, defineComponent, computed } from "vue";
 import NavItemProps from "@/types/NavItemProps";
 
 export default defineComponent({
@@ -25,12 +27,11 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const isInternalLink = (): boolean => {
-      debugger;
+    const isInternalLink = computed<boolean>((): boolean => {
       if (props.link.href.length && props.link.href.includes("http"))
         return false;
       return true;
-    };
+    });
 
     return { isInternalLink };
   },
