@@ -11,11 +11,12 @@ module.exports = {
     config.entry("app").clear();
     config.entry("app").add(contextPath + "/main.ts");
 
-    config
-          .plugin('html')
-          .tap(args => {
-              args[0].template = path.resolve(__dirname, appbasePath + '/public/index.html');
-              return args;
-          })
+    config.plugin("html").tap((args) => {
+      args[0].template = path.resolve(
+        __dirname,
+        appbasePath + "/public/index.html"
+      );
+      return args;
+    });
   },
 };

@@ -1,6 +1,8 @@
 ﻿<template>
   <div class="nav-item" id="nav-item">
-    <router-link v-if="isInternalLink" :to="link.href">{{ link.label }}</router-link>
+    <router-link v-if="isInternalLink" :to="link.href">
+      {{ link.label }}
+    </router-link>
     <a v-else :href="link.href">{{ link.label }}</a>
   </div>
 </template>

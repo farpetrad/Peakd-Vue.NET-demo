@@ -1,8 +1,8 @@
 module.exports = {
   root: true,
   env: {
-      node: true,
-      'vue/setup-compiler-macros': true
+    node: true,
+    "vue/setup-compiler-macros": true,
   },
   extends: [
     "plugin:vue/base",
@@ -26,8 +26,8 @@ module.exports = {
         "**/tests/unit/**/*.spec.{j,t}s?(x)",
       ],
       env: {
-          mocha: true,
-          'vue/setup-compiler-macros': true
+        mocha: true,
+        "vue/setup-compiler-macros": true,
       },
     },
   ],
