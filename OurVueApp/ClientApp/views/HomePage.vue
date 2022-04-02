@@ -14,9 +14,12 @@ import axios from "axios";
 
 export default defineComponent({
   async setup() {
-    const data = await axios.get(
-      "https://api2.splinterlands.com/battle/history?player=farpetrad"
-    );
+    const dataFetch = async () => {
+      return await axios.get(
+        "https://api2.splinterlands.com/battle/history?player=farpetrad"
+      );
+    };
+    const data = await dataFetch();
 
     return { data };
   },
