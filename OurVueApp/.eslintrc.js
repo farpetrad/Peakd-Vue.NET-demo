@@ -18,6 +18,16 @@ module.exports = {
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "linebreak-style": [
+      "error",
+      require("os").EOL === "\r\n" ? "windows" : "unix",
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        endOfLine: "auto",
+      },
+    ],
   },
   overrides: [
     {

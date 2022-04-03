@@ -22,24 +22,25 @@ export const state: KeyChainState = reactive<KeyChainState>({
 
 // Do a check right away if not found use setInterval to check
 const checkForKeyChain = async (): Promise<void> =>{
-    const response = await isKeychainInstalled(window);
-    if(response && response.installed){
-      state.keychainInstalled = response.installed;
-    } else {
-      state.interval = setInterval(async () => {
-        await checkForKeyChain();
-        state.tries++;
-      }, 1);
-    }
+  const response = await isKeychainInstalled(window);
+  if(response && response.installed){
+    state.keychainInstalled = response.installed;
+  } else {
+    state.interval = setInterval(async () => {
+      await checkForKeyChain();
+      state.tries++;
+    }, 1);
   }
+};
   
-  // Use a watch on the tries, if we hit a max or find it installed stop trying
-  watch(() : number => state.tries, (count: number, prevCount: number) => {
-    if(count === MAX_TRIES || state.keychainInstalled) {
-      clearInterval(state.interval);
-    }
-  });
+// Use a watch on the tries, if we hit a max or find it installed stop trying
+watch(() : number => state.tries, (count: number, prevCount: number) => {
+  if(count === MAX_TRIES || state.keychainInstalled) {
+    clearInterval(state.interval);
+  }
+});
+
 
 (function() {
-    checkForKeyChain();
+  checkForKeyChain();
 })();
