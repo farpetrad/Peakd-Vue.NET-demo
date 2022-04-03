@@ -11,6 +11,7 @@
       </template>
     </navbar>
     <div class="row" id="page-content">
+      <div :class="bgStyle"></div>
       <router-view v-slot="{ Component, route }">
         <transition
           appear
@@ -36,6 +37,19 @@ import Navbar from "./components/Navbar.vue";
 import NavItemText from "./components/NavItemText.vue";
 import NavItemTextProps from "@/types/NavItemProps";
 
+import { computed } from "vue";
+import { state } from "./utilities/keychain";
+
+type AppState = {
+  keychainInstalled: boolean;
+  tries: number;
+  interval: number;
+}
+
+const bgStyle = computed<string>((): string => {
+  return state.keychainInstalled ? 'installed' : 'not-installed'
+})
+
 const navItems: NavItemTextProps[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -46,6 +60,18 @@ const navItems: NavItemTextProps[] = [
 #app-component {
   #page-content {
     padding-top: 84px;
+  }
+
+  .installed {
+    height:30px;
+    width: 100%;
+    background-color: green;
+  }
+
+  .not-installed {
+    height: 30px;
+    width: 100%;
+    background-color: red;
   }
 }
 </style>
