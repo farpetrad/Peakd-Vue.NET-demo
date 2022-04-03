@@ -6,7 +6,18 @@ describe('It tests the App.vue', () => {
     let wrapper: VueWrapper<any>;
 
     beforeEach(() => {
-        wrapper = mount(App);
+        wrapper = mount(App, {
+            global: {
+                stubs: {
+                    RouterView: {
+                        template: '<span />'
+                    },
+                    RouterLink: {
+                        template: '<a href="/">Link</a>'
+                    }
+                }
+            }
+        });
     });
 
     afterEach(() => {

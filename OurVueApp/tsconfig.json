@@ -1,27 +1,23 @@
 ﻿{
   "compilerOptions": {
-    "allowJs": true,
     "target": "esnext",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
+    "importHelpers": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "paths": {
-      "@t/*": [ "./ClientApp/@types/*" ],
-      "@c/*": [ "./ClientApp/components/*" ],
-      "@/*": [ "./ClientApp/*" ]
-    },
     "types": [
       "webpack-env",
       "jest"
     ],
+    "paths": {
+      "@/*": [ "./ClientApp/*" ]
+    },
     "lib": [
       "esnext",
       "dom",
@@ -29,14 +25,11 @@
       "scripthost"
     ]
   },
-
-  "exclude": [
-    "./node_modules"
-  ],
-
   "include": [
-    "./@types/**/*.d.ts",
     "./ClientApp/**/*.ts",
     "./ClientApp/**/*.vue"
-  ]
+  ],
+  "exclude": [
+    "node_modules"
+  ],
 }

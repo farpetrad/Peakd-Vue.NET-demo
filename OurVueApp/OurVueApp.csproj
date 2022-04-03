@@ -7,18 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\types\NavItemProps.d.ts" />
     <None Remove="ClientApp\App.spec.ts" />
     <None Remove="ClientApp\components\Navbar.spec.ts" />
+    <None Remove="ClientApp\components\NavItemText.spec.ts" />
+    <None Remove="ClientApp\router\index.ts" />
+    <None Remove="ClientApp\views\About.spec.ts" />
+    <None Remove="ClientApp\views\Home.spec.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\%40types\" />
     <Folder Include="ClientApp\assets\" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\types\NavItemProps.d.ts" />
     <TypeScriptCompile Include="ClientApp\App.spec.ts" />
     <TypeScriptCompile Include="ClientApp\components\Navbar.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\components\NavItemText.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\router\index.ts" />
+    <TypeScriptCompile Include="ClientApp\views\About.spec.ts" />
+    <TypeScriptCompile Include="ClientApp\views\Home.spec.ts" />
   </ItemGroup>
 
 </Project>
