@@ -6,6 +6,7 @@ This code is the repo for a post series on Peakd.
 * https://peakd.com/hive-169321/@farpetrad/hosting-a-vue-3-application-in-net-6
 * https://peakd.com/hive-169321/@farpetrad/hosting-a-vue-3-application-in-net-6-part-2-enabling-typescript-and-jest
 * https://peakd.com/hive-169321/@farpetrad/vuejs-3-development-part-3-jest-and-creating-a-navigation-bar
+* https://peakd.com/hive-163521/@farpetrad/vuejs-development-part-4-routing-eslint-and-a-simple-component-for-boostrap-nav-item
 
 
 ## Features
