@@ -14,7 +14,7 @@ import axios, { AxiosResponse } from "axios";
 
 export default defineComponent({
   async setup() {
-    const dataFetch = async () : Promise<AxiosResponse> => {
+    const dataFetch = async (): Promise<AxiosResponse> => {
       return await axios.get(
         "https://api2.splinterlands.com/battle/history?player=farpetrad"
       );

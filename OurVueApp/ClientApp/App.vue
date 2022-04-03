@@ -40,15 +40,9 @@ import NavItemTextProps from "@/types/NavItemProps";
 import { computed } from "vue";
 import { state } from "./utilities/keychain";
 
-type AppState = {
-  keychainInstalled: boolean;
-  tries: number;
-  interval: number;
-}
-
 const bgStyle = computed<string>((): string => {
-  return state.keychainInstalled ? 'installed' : 'not-installed'
-})
+  return state.keychainInstalled ? "installed" : "not-installed";
+});
 
 const navItems: NavItemTextProps[] = [
   { href: "/", label: "Home" },
@@ -63,7 +57,7 @@ const navItems: NavItemTextProps[] = [
   }
 
   .installed {
-    height:30px;
+    height: 30px;
     width: 100%;
     background-color: green;
   }
